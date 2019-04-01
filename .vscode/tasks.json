@@ -1,0 +1,53 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "type":"shell",
+            "command": "msbuild",
+            "args": [
+                // Ask msbuild to generate full paths for file names.
+                "${workspaceFolder}/build/windows-build/Snek.sln",
+                "/m"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": false
+            },
+            "label": "windows-debug",
+            // Show the output window only if unrecognized errors occur.
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "panel": "dedicated"
+            },
+            // Use the standard MS compiler pattern to detect errors, warnings and infos
+            "problemMatcher": "$msCompile"
+        },
+        {
+            "type":"shell",
+            "command": "msbuild",
+            "args": [
+                "${workspaceRoot}/build/windows-build/Snek.sln",
+                "/p:Configuration=Release",
+                "/m"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": false
+            },
+            "label": "windows-release",
+            // Show the output window only if unrecognized errors occur.
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "panel": "dedicated"
+            },
+            // Use the standard MS compiler pattern to detect errors, warnings and infos
+            "problemMatcher": "$msCompile"
+        }
+        
+    ]
+    
+}

@@ -1,0 +1,44 @@
+{
+    "configurations": [
+        {
+            "name": "Release",
+            "type": "cppvsdbg",
+            "request": "launch",
+            "program": "${workspaceRoot}/build/windows-build/x64/Release/Snek.exe",
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "${workspaceRoot}/build/windows",
+            "environment": [],
+            "externalConsole": true,
+            "preLaunchTask": "windows-release"
+        },
+        {
+            "name": "Debug",
+            "type": "cppvsdbg",
+            "request": "launch",
+            "program": "${workspaceRoot}/build/windows-build/x64/Debug/Snek.exe",
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "${workspaceRoot}/build/windows",
+            "environment": [],
+            "externalConsole": true,
+            "preLaunchTask": "windows-debug"
+        },
+        {
+            "type": "electron",
+            "request": "launch",
+            "name": "Kha: HTML5",
+            "appDir": "${workspaceFolder}/build/debug-html5",
+            "sourceMaps": true,
+            "preLaunchTask": "Kha: Build for Debug HTML5"
+        },
+        {
+            "type": "krom",
+            "request": "launch",
+            "name": "Kha: Krom",
+            "preLaunchTask": "Kha: Build for Krom"
+        }
+    ],
+    "compounds": [],
+    "version": "0.2.0"
+}
